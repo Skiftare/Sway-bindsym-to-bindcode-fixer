@@ -86,7 +86,7 @@ Requires xmodmap, which may not be available in all environments.
 
 May not correctly handle complex keybinding cases with advanced modifiers or nested commands.
 
-License
+# License
 
 This script is provided "as-is" without any warranty. Use at your own risk.
 
