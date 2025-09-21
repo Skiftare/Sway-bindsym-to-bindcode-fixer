@@ -25,7 +25,7 @@ Linux environment with xmodmap installed
 
 Command-Line Arguments
 
-`python script.py <input_dir> [--verbose | -v]`
+`python swayfixer.py <input_dir> [--verbose | -v]`
 
 # Arguments:
 
@@ -35,7 +35,7 @@ input_dir (required): Path to the directory containing Sway configuration files.
 
 # Example
 
-`python script.py /home/user/.config/sway/config.d/ -v`
+`python swayfixer.py /home/user/.config/sway/config.d/ -v`
 
 This command will process all files in the specified directory and output the modified files into a new directory, e.g., config.d.fixed.
 
