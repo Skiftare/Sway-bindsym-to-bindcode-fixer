@@ -97,7 +97,7 @@ def process_config_file(input_path: Path, output_path: Path) -> None:
         needs_conversion = False
         
         # Process each part of the key combination
-        for part in parts:
+        for part in key_combinations:  # ← ИСПРАВЛЕНО: было `parts`, теперь `key_combinations`
             part = part.strip()
             # Check if this part is a special key or variable
             is_special = any(
@@ -118,12 +118,12 @@ def process_config_file(input_path: Path, output_path: Path) -> None:
         if needs_conversion:
             old_bind = full_line
             new_bind = f"bindcode {'+'.join(new_parts)} {command}"
+            # Заменяем осторожно — лучше по позиции, но для простоты пока так
             new_content = new_content.replace(old_bind, new_bind)
 
     # Create parent directories if they don't exist
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(new_content, encoding='utf-8')
-
 def main():
     parser = argparse.ArgumentParser(
         description='Convert bindsym to bindcode in Sway config files'
